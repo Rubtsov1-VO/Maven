@@ -19,12 +19,12 @@ pipeline {
          parallel{
            stage ('Deploy to Staging'){
              steps {
-               sh "cp **/target/*.war /home/ivan/programms/tomcat-staging/webapps"
+               sh "cp **/target/*.war /etc/TomCat/apache-tomcat-10.0.6/webapps"
              }
            }
            stage ('Deploy to prod') {
              steps {
-               sh "cp **/target/*.war /home/ivan/programms/tomcat-prod/webapps"
+               sh "cp **/target/*.war /etc/TomCat/apache-tomcat-10.0.6/webapps"
              }     
            }
          }
